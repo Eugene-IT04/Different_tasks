@@ -15,11 +15,11 @@ public class GraphAlgorithms {
 
         //breadth first search
         System.out.println("BFS:");
-        Queue<String> queue = new LinkedList<>();
-        List<String> searched = new Vector<>();
+        LinkedList<String> queue = new LinkedList<>();
+        List<String> searched = new LinkedList<>();
         queue.add("you");
-        while(queue.size() != 0){
-            String queuePoll = queue.poll();
+        while(!queue.isEmpty()){
+            String queuePoll = queue.pollFirst();
             if(!searched.contains(queuePoll)) {
                 searched.add(queuePoll);
                 System.out.println(queuePoll);
@@ -29,11 +29,11 @@ public class GraphAlgorithms {
 
         //depth first search
         System.out.println("\nDFS:");
-        Stack<String> stack = new Stack<>();
-        List<String> searched2 = new Vector<>();
+        LinkedList<String> stack = new LinkedList<>();
+        List<String> searched2 = new LinkedList<>();
         stack.add("you");
-        while(!stack.empty()){
-            String stackPop = stack.pop();
+        while(!stack.isEmpty()){
+            String stackPop = stack.pollLast();
             if(!searched2.contains(stackPop)) {
                 searched2.add(stackPop);
                 System.out.println(stackPop);
